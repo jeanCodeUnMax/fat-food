@@ -1,0 +1,11 @@
+.choiceProduct {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .choiceProduct {
+    grid-template-columns: 1fr;
+  }
+}
