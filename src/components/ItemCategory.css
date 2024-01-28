@@ -19,6 +19,16 @@
     inset 0 0 16px #5b6b932e;
 }
 
+.itemCategory--selected {
+  border: 3px solid hwb(180 16% 81%);
+  background: radial-gradient(circle, rgba(48, 93, 130, 0.066) 50%, #5d89a63b 80%);
+  box-shadow:
+    0 0 4px hsla(51, 82%, 51%, 0.864),
+    inset 0 0 8px #ffffffca,
+    0 0 16px #747bad32,
+    inset 0 0 16px #5b6b932e;
+}
+
 .itemCategoryImage img {
   width: 80%;
   height: 120px;

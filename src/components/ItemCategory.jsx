@@ -5,6 +5,8 @@ export default function ItemCategory(props) {
 	const { item, stateTitleCategory } = props;
 	const [titleCategory, setTitleCategory] = stateTitleCategory;
 
+  const isSelected = titleCategory === item.name; 
+
 	console.log("render ItemCategory");
 
 	const handleClick = () => {
@@ -12,7 +14,7 @@ export default function ItemCategory(props) {
     setTitleCategory(item.name)
 	};
 	return (
-		<div className="itemCategory text-center" onClick={handleClick}>
+		<div className={`itemCategory text-center ${isSelected && "itemCategory--selected"}`} onClick={handleClick}>
 			<div className="itemCategoryImage">
 				<img src={`./src/assets/${item.image}`} alt={item.name} />
 			</div>
