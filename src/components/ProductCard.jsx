@@ -5,6 +5,7 @@ import './ProductCard.css';
 
 export default function ProductCard(props) {
   const { product } = props;
+  console.log("render productCard");
 
   return (
     <Card style={{ width: '18rem' }}>
@@ -25,7 +26,7 @@ export default function ProductCard(props) {
 
 // définir les types
 ProductCard.propTypes = {
-  product: PropTypes.exact({
+  product: PropTypes.shape({
     category: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,

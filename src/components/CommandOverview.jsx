@@ -1,6 +1,9 @@
 import './CommandOverview.css';
 
 const CommandOverview = () => {
+
+  console.log("render commandHoverview");
+  
   return (
     <div className='command-overview-container'>
       <div className='command-overview-container__top text-left'>

@@ -10,14 +10,15 @@
 
 button.category-selected-return-btn {
   position: relative;
-  z-index: -1;
+  z-index: -0;
   display: block;
 }
 
 button.category-selected-return-btn::before {
-
-  content: '';
+  
   position: absolute;
+  z-index: 100;
+  content: '';
   top: 6px;
   left: -14px;
   height: 32px;
@@ -28,13 +29,13 @@ button.category-selected-return-btn::before {
 
 }
 
-button.category-selected-return-btn {
+/* button.category-selected-return-btn {
   position: relative;
   z-index: 10!important;
   display: block;
-}
+} */
 
-button.category-selected-return-btn::before {
+/* button.category-selected-return-btn::before {
 
   content: '';
   position:absolute;
@@ -47,4 +48,4 @@ button.category-selected-return-btn::before {
   z-index: 1;
 
 
-}
+} */
