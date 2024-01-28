@@ -8,13 +8,12 @@ export default function ChoiceProduct() {
 	const [data] = useState(superMock);
 	return (
 		<>
-			<h1>the Fat - Fooood</h1>
-			<NavbarCategory/>
+			<h1 className="main-header">Fat - Fooood</h1>
+			<NavbarCategory />
 			<div className="choiceProduct">
 				{data &&
 					data.map((item) => <ProductCard key={item.id} product={item} />)}
 			</div>
-			
 		</>
 	);
 }

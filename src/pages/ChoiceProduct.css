@@ -1,15 +1,18 @@
 .choiceProduct {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
-  row-gap: 20px;
-  column-gap: 20px;
-
-  
-
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  width: 70%;
+  margin-left: 2rem;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .choiceProduct {
     grid-template-columns: 1fr;
   }
+} */
+h1.main-header {
+  /* margin-top: 2rem;
+  margin-bottom: 2rem; */
+  margin-block: 2rem;
 }

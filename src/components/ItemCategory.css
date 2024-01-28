@@ -1,29 +1,28 @@
-.itemCategory{
-
-  background-color: aqua;
-  height: 250px;
-  width: 220px;
-
-
-
- 
-
-
+.itemCategory {
+  background-color: #e3f0f0;
+  height: 190px;
+  width: 100%;
+  margin-inline: 1rem;
+  padding-top: 1rem;
+  border-radius: 6px;
+  border: 3px solid hsl(180, 5%, 63%);
+  cursor: pointer;
 }
-.itemCategoryName{
-  font-size: 150%;
-  overflow:auto;
- 
 
+.itemCategory:active {
+  border: 3px solid hwb(180 16% 81%);
+  background: radial-gradient(circle, rgba(48, 93, 130, 0.066) 50%, #5d89a63b 80%);
+  box-shadow:
+    0 0 4px #ffffffbf,
+    inset 0 0 8px #ffffffca,
+    0 0 16px #7c88de32,
+    inset 0 0 16px #5b6b932e;
 }
-.itemCategoryImage img{
-  
-  width: 200px;
-  height: 200px;
-  object-fit:cover;
-  
- 
-  
- 
 
+.itemCategoryImage img {
+  width: 80%;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
 }
