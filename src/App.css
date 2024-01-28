@@ -1,16 +1,14 @@
 #root {
   /* margin: 0 auto; */
   /* padding: 2rem; */
-  text-align: center;
+  /* text-align: center; */
   width: 100%;
 }
 
 body {
-     width: 100vw;
-     overflow-x: hidden;
-
+  width: 100vw;
+  overflow-x: hidden;
 }
-
 
 .logo {
   height: 6em;
@@ -47,4 +45,3 @@ body {
 .read-the-docs {
   color: #888;
 }
-
