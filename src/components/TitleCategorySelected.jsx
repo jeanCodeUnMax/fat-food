@@ -6,12 +6,12 @@ export default function TitleCategorySelected(props) {
 	return (
 		<>
 			<div className="container-title-category-selected">
-				<div>
+				<button className="category-selected-return-bouton title">
 					{nameCategorySelected
 						? `voici nos  ${nameCategorySelected}`
 						: "faites votre choix ??"}
-				</div>
-				<button className="category-selected-return-btn">retour</button>
+				</button>
+				<button className="category-selected-return-bouton return">retour</button>
 			</div>
 		</>
 	);

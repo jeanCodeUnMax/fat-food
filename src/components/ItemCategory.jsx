@@ -1,8 +1,10 @@
 import "./ItemCategory.css";
 import PropTypes from "prop-types";
 
-export default function ItemCategory(props) {
-	const { item, stateTitleCategory } = props;
+// methode de desctreuturation dans les parametre de la function
+//  donc props en variable directement
+export default function ItemCategory({ item, stateTitleCategory }) {
+
 	const [titleCategory, setTitleCategory] = stateTitleCategory;
 
   const isSelected = titleCategory === item.name; 
