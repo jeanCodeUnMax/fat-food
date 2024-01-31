@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './ProductCard.css';
 
 export default function ProductCard(props) {
-  const { product } = props;
+  const { name, qty, price, addToCart, description, image } = props;
   console.log("render productCard");
 
   return (
@@ -12,25 +12,26 @@ export default function ProductCard(props) {
       <Card.Img
         className='imageProduct'
         variant='top'
-        src={`./src/assets/${product.image}`}
+        src={`./src/assets/${image}`}
       />
       <Card.Body className='text-center'>
-        <Card.Title>{product.name}</Card.Title>
-        <Card.Text>{product.description}</Card.Text>
-        <Card.Text>{product.price}</Card.Text>
-        <Button variant='primary'>Ajouter au panier</Button>
+        <Card.Title>{name}</Card.Title>
+        <Card.Text>{description}</Card.Text>
+        <Card.Text>{price}</Card.Text>
+        <Button variant="primary" onClick={() => addToCart(name, qty, price)}>
+          Ajouter au panier
+        </Button>
       </Card.Body>
     </Card>
   );
 }
 
-// définir les types
+// Define PropTypes for the individual props
 ProductCard.propTypes = {
-  product: PropTypes.shape({
-    category: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-  }).isRequired,
+  name: PropTypes.string.isRequired,
+  qty: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  addToCart: PropTypes.func.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
