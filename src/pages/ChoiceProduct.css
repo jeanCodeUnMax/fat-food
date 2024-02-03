@@ -17,6 +17,9 @@ h1.main-header {
   margin-block: 2rem;
 }
 
-.main-choice-product-page {
+main.main-choice-product-page {
+  position: relative;
+  width: 100%;
+  
   display: flex;
 }

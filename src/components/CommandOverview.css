@@ -1,6 +1,9 @@
 .command-overview-container {
+  /* position: fixed;
+  left: calc(1440px - 27.5%);
+  top: 450px; */
   margin-inline: 1rem;
-  width: calc(30% - 2rem);
+  width: calc(30% - 4rem);
 }
 .command-overview-container__top {
   color: #08230a;

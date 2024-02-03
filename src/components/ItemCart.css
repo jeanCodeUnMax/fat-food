@@ -1,0 +1,43 @@
+.product-wrapper{
+  display: flex;
+}
+.product-wrapper .product-name{
+  width: 6rem;
+}
+.product-wrapper .product-description{
+  width: calc(100% - 6rem);
+}
+.btns-wrapper{
+  display: flex;
+  margin-top: 1rem;
+}
+button.btn-add-item,
+button.btn-remove-item{
+height: 2rem;
+width: 2rem;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: 900;
+font-size: 1rem;
+cursor: pointer;
+outline: none;
+border: none;
+box-shadow: 0 4px 4px #00000055;
+}
+button.btn-add-item:hover,
+button.btn-remove-item:hover{
+  box-shadow: none;
+}
+button.btn-add-item{
+  background-color: rgb(0, 77, 0);
+}
+button.btn-remove-item{
+  background-color: rgb(99, 0, 0);
+}
+.qty-item-order{
+  padding-inline: .75rem;
+  font-size: 1.15rem;
+  line-height: 2rem;
+}
+
