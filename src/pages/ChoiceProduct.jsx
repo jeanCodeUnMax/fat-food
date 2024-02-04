@@ -6,21 +6,53 @@ import NavbarCategory from "../components/NavbarCategory";
 import CommandOverview from "../components/CommandOverview";
 import TitleCategorySelected from "../components/TitleCategorySelected";
 
-// const arrayCart = [];
 export default function ChoiceProduct() {
 	const [data] = useState(superMock);
 	const [nameCategorySelected, setNameCategorySelected] = useState(null);
 	const [cart, setCart] = useState([]);
 
-	function handleAddToCart(product) {
-		// arrayCart.push(product);
-		// const arrayCart = [...arrayCart,product]
-		setCart(prev => [...prev,product]);
+	function updateQty(product, qty) {
+		setCart((prev) => {
+			let updatedCart = [...prev];
+			const index = updatedCart.findIndex(
+				(item) => item.product.id === product.id
+			);
+			if (index !== -1) {
+				updatedCart[index] = { ...updatedCart[index], qty: qty };
+				updatedCart = updatedCart.filter((item) => item.qty > 0);
+
+				return updatedCart;
+			}
+		});
 	}
 
-	
+	function handleAddToCart(product) {
+		//  si item existe
+		//  item ++
+		//  sinon
+		//  creat item
+		//  product
+		//  qty
 
+		const index = cart.findIndex((item) => item.product.id === product.id);
 
+		if (index === -1) {
+			console.log("create  item");
+			// console.log(false == []) true car 0 ok
+			// console.log(false == null) false pas ok
+			// console.log(null == undefined) true  pas ok
+
+			// setCart([...cart, { product: product, qty: 1 }]);
+			setCart((prev) => [...prev, { product: product, qty: 1 }]);
+		} else {
+			console.log("add  qty item");
+			const updatedCart = [...cart];
+			updatedCart[index].qty += 1;
+			setCart([...updatedCart]);
+			console.log(updatedCart);
+			console.log(cart);
+		}
+	}
 
 	const stateTitleCategory = [nameCategorySelected, setNameCategorySelected];
 	const productFiltered = data.filter(
@@ -39,16 +71,15 @@ export default function ChoiceProduct() {
 				<hr />
 				<div className="choiceProduct">
 					{data &&
-						// productFiltered.map((item) => <ProductCard key={item.id} product={item} setCart={setCart} />)}
 						productFiltered.map((item) => (
 							<ProductCard
 								key={item.id}
 								product={item}
-								setCart={handleAddToCart}
+								handleAddToCart={handleAddToCart}
 							/>
 						))}
 				</div>
-				<CommandOverview cart={cart} />
+				<CommandOverview cart={cart} updateQty={updateQty} />
 			</main>
 		</>
 	);

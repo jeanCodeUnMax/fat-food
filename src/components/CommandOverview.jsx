@@ -1,11 +1,14 @@
-
+import { propTypes } from "react-bootstrap/esm/Image";
 import "./CommandOverview.css";
 import ItemCart from "./ItemCart";
-
-const CommandOverview = ({ cart }) => {
+import PropTypes from "prop-types";
+const CommandOverview = ({ cart, updateQty }) => {
 	console.log("render commandHoverview");
 
-
+	console.log(cart);
+	const totalCommand = cart.reduce((accu, item) => {
+		return accu + parseFloat(item.product.price) * item.qty;
+	}, 0);
 
 	return (
 		<div className="command-overview-container">
@@ -20,19 +23,14 @@ const CommandOverview = ({ cart }) => {
 					<span className="h3 fw-bold">VOTRE COMMANDE</span>
 				</div>
 				<div className="command-overview-container__main-content px-4 py-4 ">
-					{cart.map((item, index) => (
-						<ItemCart key={index} product={item} qty={qty} />
+					{cart.map((item) => (
+						<ItemCart
+							key={item.product.id}
+							product={item.product}
+							qty={item.qty}
+							updateQty={updateQty}
+						/>
 					))}
-
-					{/* <div className='product-wrapper'>
-            <p className='product-name fw-bold mb-1'>1 x Happy Meal</p>
-            <p className='product-description'>
-              <p>Cheeseburger</p>
-              <p>Petite Frite</p>
-              <p>Fanta 25CL</p>
-              <p>Jouet Garçon</p>
-            </p>
-          </div> */}
 				</div>
 				<div className="command-overview-container__navigate-btns mb-3">
 					<button>
@@ -44,7 +42,7 @@ const CommandOverview = ({ cart }) => {
 				</div>
 				<div className="command-overview-container__total d-flex justify-content-between px-2">
 					<p className="h3 text-uppercase fw-bold my-2">total</p>
-					<p className="h3 text-uppercase fw-bold my-2">€31,30</p>
+					<p className="h3 text-uppercase fw-bold my-2">{totalCommand}€</p>
 				</div>
 			</div>
 			<div className="command-overview-container__bottom">
@@ -55,4 +53,8 @@ const CommandOverview = ({ cart }) => {
 	);
 };
 
+CommandOverview.propTypes = {
+	cart: PropTypes.array,
+	updateQty: propTypes.func,
+};
 export default CommandOverview;

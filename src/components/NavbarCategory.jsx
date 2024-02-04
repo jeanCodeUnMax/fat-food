@@ -2,7 +2,6 @@ import "./NavbarCategory.css";
 import ItemCategory from "./ItemCategory";
 import PropTypes from "prop-types";
 
-
 const category = [
 	{ name: "burger", image: "burger_13.jpg" },
 	{ name: "frite", image: "frite_1.jpg" },
@@ -22,13 +21,16 @@ export default function NavbarCategory(props) {
 		<nav className="navbarCategory">
 			{category &&
 				category.map((item) => (
-					<ItemCategory key={item.id} item={item} stateTitleCategory={stateTitleCategory} />
+					<ItemCategory
+						key={item.name}
+						item={item}
+						stateTitleCategory={stateTitleCategory}
+					/>
 				))}
 		</nav>
 	);
 }
 
- 
 NavbarCategory.propTypes = {
-  stateTitleCategory: PropTypes.array.isRequired,
+	stateTitleCategory: PropTypes.array.isRequired,
 };

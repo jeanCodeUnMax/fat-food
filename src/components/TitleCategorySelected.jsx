@@ -17,7 +17,7 @@ export default function TitleCategorySelected(props) {
 	);
 }
 
-// complication inutiles. pas besoin d'avoir un objet pour une simple proprié string
+
 TitleCategorySelected.propTypes = {
 	nameCategorySelected: PropTypes.string,
 };
