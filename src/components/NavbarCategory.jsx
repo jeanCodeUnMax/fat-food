@@ -14,7 +14,7 @@ const category = [
 ];
 
 export default function NavbarCategory(props) {
-	const { stateTitleCategory } = props;
+	const { filteredProductSelected } = props;
 	console.log("render navbarCategory");
 
 	return (
@@ -24,7 +24,7 @@ export default function NavbarCategory(props) {
 					<ItemCategory
 						key={item.name}
 						item={item}
-						stateTitleCategory={stateTitleCategory}
+						stateTitleCategory={filteredProductSelected}
 					/>
 				))}
 		</nav>

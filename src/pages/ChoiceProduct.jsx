@@ -5,11 +5,16 @@ import superMock from "../mock.json";
 import NavbarCategory from "../components/NavbarCategory";
 import CommandOverview from "../components/CommandOverview";
 import TitleCategorySelected from "../components/TitleCategorySelected";
+import { useRecoilState, useRecoilValue } from "recoil";
+
+		import {filteredProductSelectedState} from "../store"
+
 
 export default function ChoiceProduct() {
 	const [data] = useState(superMock);
 	const [nameCategorySelected, setNameCategorySelected] = useState(null);
 	const [cart, setCart] = useState([]);
+	const filteredProductSelected = useRecoilValue([filteredProductSelectedState])
 
 	function updateQty(product, qty) {
 		setCart((prev) => {
@@ -55,12 +60,12 @@ export default function ChoiceProduct() {
 	}
 
 	const stateTitleCategory = [nameCategorySelected, setNameCategorySelected];
-	const productFiltered = data.filter(
+	const filteredProductSelectedState = data.filter(
 		(item) => item.category === nameCategorySelected
 	);
 
 	console.log("render choiceProduct");
-
+	console.log(filteredProductSelected);
 	return (
 		<>
 			<h1 className="main-header text-center">Fat - Fooood</h1>
@@ -71,11 +76,11 @@ export default function ChoiceProduct() {
 				<hr />
 				<div className="choiceProduct">
 					{data &&
-						productFiltered.map((item) => (
+						filteredProductSelectedState.map((item) => (
 							<ProductCard
 								key={item.id}
 								product={item}
-								handleAddToCart={handleAddToCart}
+								handleAddToCart={handleAddToCart} 
 							/>
 						))}
 				</div>

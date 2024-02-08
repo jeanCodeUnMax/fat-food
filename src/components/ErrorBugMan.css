@@ -1,0 +1,15 @@
+h1{
+  display: flex;
+  justify-content: center; /* Horizontally center the items */
+  align-items: center; /* Vertically center the items */
+  width: 90%;
+  background-color: #e9d15a;
+
+
+}
+
+img{
+  width: 90%;
+  background-color: #e9d15a;
+
+}
