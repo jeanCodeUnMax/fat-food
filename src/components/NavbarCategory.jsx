@@ -1,4 +1,4 @@
-import "./NavbarCategory.css";
+import "./css/NavbarCategory.css";
 import ItemCategory from "./ItemCategory";
 import PropTypes from "prop-types";
 
@@ -32,5 +32,6 @@ export default function NavbarCategory(props) {
 }
 
 NavbarCategory.propTypes = {
-	stateTitleCategory: PropTypes.array.isRequired,
+	stateTitleCategory: PropTypes.array,
+	filteredProductSelected: PropTypes.array,
 };

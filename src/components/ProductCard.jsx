@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import PropTypes from "prop-types";
-import "./ProductCard.css";
+import "./css/ProductCard.css";
 
 export default function ProductCard({ product, handleAddToCart }) {
 	return (
@@ -26,12 +26,12 @@ export default function ProductCard({ product, handleAddToCart }) {
 
 ProductCard.propTypes = {
 	product: PropTypes.shape({
-		category: PropTypes.string.isRequired,
-		description: PropTypes.string.isRequired,
+		category: PropTypes.string,
+		description: PropTypes.string,
 		price: PropTypes.number,
-		name: PropTypes.string.isRequired,
-		image: PropTypes.string.isRequired,
-	}).isRequired,
+		name: PropTypes.string,
+		image: PropTypes.string,
+	}),
 	stateCart: PropTypes.object,
-	handleAddToCart: PropTypes.func.isRequired,
+	handleAddToCart: PropTypes.func,
 };

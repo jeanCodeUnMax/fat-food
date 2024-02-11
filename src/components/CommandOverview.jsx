@@ -1,7 +1,8 @@
 import { propTypes } from "react-bootstrap/esm/Image";
-import "./CommandOverview.css";
+import "./css/CommandOverview.css";
 import ItemCart from "./ItemCart";
 import PropTypes from "prop-types";
+
 const CommandOverview = ({ cart, updateQty }) => {
 	console.log("render commandHoverview");
 

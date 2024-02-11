@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./ItemCart.css";
+import "./css/ItemCart.css";
 
 const ItemCart = ({ product, qty, updateQty }) => {
 	const handleDecrease = () => {

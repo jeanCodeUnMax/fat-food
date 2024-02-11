@@ -1,4 +1,4 @@
-import "./ItemCategory.css";
+import "./css/ItemCategory.css";
 import PropTypes from "prop-types";
 
 export default function ItemCategory({ item, stateTitleCategory }) {
@@ -28,8 +28,8 @@ export default function ItemCategory({ item, stateTitleCategory }) {
 
 ItemCategory.propTypes = {
 	item: PropTypes.shape({
-		name: PropTypes.string.isRequired,
-		image: PropTypes.string.isRequired,
-	}).isRequired,
+		name: PropTypes.string,
+		image: PropTypes.string,
+	}),
 	stateTitleCategory: PropTypes.array,
 };

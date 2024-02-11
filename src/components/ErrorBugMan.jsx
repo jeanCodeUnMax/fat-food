@@ -1,5 +1,5 @@
 
-import "./ErrorBugMan.css";
+import "./css/ErrorBugMan.css";
 
 export default function ErrorBugMan() {
 	return (
@@ -11,5 +11,7 @@ export default function ErrorBugMan() {
 	);
 }
 
-
+ErrorBugMan.propTypes ={
+	
+}
 	// throw new Error("Webman aime bien foutre le bordel dans son code");

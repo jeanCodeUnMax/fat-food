@@ -1,4 +1,4 @@
-import "./TitleCategorySelected.css";
+import "./css/TitleCategorySelected.css";
 import PropTypes from "prop-types";
 
 export default function TitleCategorySelected(props) {
