@@ -2,14 +2,18 @@ import { propTypes } from "react-bootstrap/esm/Image";
 import "./css/CommandOverview.css";
 import ItemCart from "./ItemCart";
 import PropTypes from "prop-types";
+import { useRecoilValue} from "recoil";
+import { cartProductState } from "../store";
 
-const CommandOverview = ({ cart, updateQty }) => {
+const CommandOverview = () => {
 	console.log("render commandHoverview");
-
-	console.log(cart);
+	
+	const cart = useRecoilValue(cartProductState);
 	const totalCommand = cart.reduce((accu, item) => {
 		return accu + parseFloat(item.product.price) * item.qty;
 	}, 0);
+	
+	
 
 	return (
 		<div className="command-overview-container">
@@ -29,7 +33,7 @@ const CommandOverview = ({ cart, updateQty }) => {
 							key={item.product.id}
 							product={item.product}
 							qty={item.qty}
-							updateQty={updateQty}
+					
 						/>
 					))}
 				</div>

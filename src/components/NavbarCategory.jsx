@@ -1,6 +1,8 @@
 import "./css/NavbarCategory.css";
 import ItemCategory from "./ItemCategory";
 import PropTypes from "prop-types";
+import { useRecoilValue } from "recoil";
+import { filteredProductSelectedState } from "../store";
 
 const category = [
 	{ name: "burger", image: "burger_13.jpg" },
@@ -13,25 +15,21 @@ const category = [
 	{ name: "petit-dej", image: "petit-dej_4.jpg" },
 ];
 
-export default function NavbarCategory(props) {
-	const { filteredProductSelected } = props;
-	console.log("render navbarCategory");
+export default function NavbarCategory() {
+	const filteredProductSelect = useRecoilValue(filteredProductSelectedState);
 
+	console.log("render navbarCategory");
+	console.log(filteredProductSelect);
+	console.log("Je sors de navbar");
 	return (
 		<nav className="navbarCategory">
 			{category &&
-				category.map((item) => (
-					<ItemCategory
-						key={item.name}
-						item={item}
-						stateTitleCategory={filteredProductSelected}
-					/>
-				))}
+				category.map((item) => <ItemCategory key={item.name} item={item} />)}
 		</nav>
 	);
 }
 
 NavbarCategory.propTypes = {
 	stateTitleCategory: PropTypes.array,
-	filteredProductSelected: PropTypes.array,
+	filteredProductSelectedState: PropTypes.array,
 };
