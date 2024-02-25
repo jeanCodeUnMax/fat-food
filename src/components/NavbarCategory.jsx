@@ -17,6 +17,7 @@ const category = [
 
 export default function NavbarCategory() {
 	const filteredProductSelect = useRecoilValue(filteredProductSelectedState);
+	
 
 	console.log("render navbarCategory");
 	console.log(filteredProductSelect);
@@ -26,6 +27,7 @@ export default function NavbarCategory() {
 			{category &&
 				category.map((item) => <ItemCategory key={item.name} item={item} />)}
 		</nav>
+	
 	);
 }
 
