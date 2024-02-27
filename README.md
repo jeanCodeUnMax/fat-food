@@ -9,4 +9,4 @@ Currently, two official plugins are available:
 
 test de modif pour sign gpg et gitmoji
 
-test version 2
+test version 2 branche essais2
